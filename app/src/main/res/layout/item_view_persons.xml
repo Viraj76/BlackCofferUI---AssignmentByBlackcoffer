@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_5sdp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/detailsLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_4sdp"
+                android:weightSum="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteY="8dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/imageCV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.40"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="@dimen/_4sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <ImageView
+                        android:id="@+id/personImage"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/primary" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.60"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:layout_marginVertical="@dimen/_2sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/personName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Viraj Gupta"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/personLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Raiput | Student"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:id="@+id/personDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Within 8.5 KM"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold" />
+
+                    <FrameLayout
+                        android:id="@+id/pbFrameLayout"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_7sdp"
+                     >
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="match_parent"
+                            android:max="100"
+                            android:progress="70"
+                            android:progressDrawable="@drawable/corner_to_pb" />
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/personDetailLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout">
+
+            <TextView
+                android:id="@+id/tvPersonInterest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:padding="@dimen/_1sdp"
+                android:text="Coffee | Business | Friendship"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/tvPersonDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:padding="@dimen/_1sdp"
+                android:text="@string/hi_community_i_am_open_to_new_connections"
+                android:textColor="@color/tcBlue" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnInvite"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="match_parent"
+            android:text="@string/invite"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personDetailLL" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

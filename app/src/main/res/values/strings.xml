@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">BlackCoffer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="explore">Explore</string>
+    <string name="refine">Refine</string>
+    <string name="personal">Personal</string>
+    <string name="business">Business</string>
+    <string name="merchant">Merchant</string>
+    <string name="refinefragment">RefineFragment</string>
+    <string name="explorefragment">ExploreFragment</string>
+    <string name="hi_community_i_am_open_to_new_connections">Hi community! I am open to new connections</string>
+    <string name="invite">+ INVITE</string>
+    <string name="_1_km">1 KM</string>
+    <string name="_100_km">100 KM</string>
+    <string name="coffee">Coffee</string>
+    <string name="save_and_explore">Save and Explore</string>
+    <string name="search">Search</string>
+    <string name="searchh">Search</string>
+    <string name="increase_radius">Increase Radius</string>
+    <string name="your_explore_list_is_empty">Your explore list is EMPTY</string>
+    <string name="searchhh">Search</string>
+    <string name="select_your_availability">Select Your Availability</string>
+    <string name="add_you_status">Add you status</string>
+    <string name="tt">Hi community! I am open to new connections</string>
+    <string name="_0_250">0/250</string>
+    <string name="select_hyper_local_distance">Select Hyper Local Distance</string>
+    <string name="_0">0</string>
+    <string name="select_purpose">Select Purpose</string>
+    <string name="dating">Dating</string>
+    <string name="dinning">Dinning</string>
+    <string name="businesss">Business</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="friend">Friend</string>
+    <string name="matrimony">Matrimony</string>
+    <string name="movies">Movies</string>
+    <string name="pending">Pending</string>
+    <string name="totalCount">/250</string>
+</resources>
