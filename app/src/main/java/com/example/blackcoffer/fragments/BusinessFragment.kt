@@ -28,13 +28,13 @@ class BusinessFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentBusinessBinding.inflate(layoutInflater)
-        businessPersonList = arrayListOf()
-
-        prepareRvForBusinessPersonAdapter()
-
-        makingCustomData()
-
-        businessPersonAdapter.setBusinessPersonList(businessPersonList) // providing the data to the recycler view
+//        businessPersonList = arrayListOf()
+//
+//        prepareRvForBusinessPersonAdapter()
+//
+//        makingCustomData()
+//
+//        businessPersonAdapter.setBusinessPersonList(businessPersonList) // providing the data to the recycler view
 
         return binding.root
     }

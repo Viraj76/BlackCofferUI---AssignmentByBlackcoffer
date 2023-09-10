@@ -23,39 +23,40 @@ class RefineFragment : Fragment() {
     ): View {
 
         binding = FragmentRefineBinding.inflate(layoutInflater)
-        val initialText = binding.etStatus.text.toString()       //getting initial test for the counting for characters
-        val adapterAvailability = ArrayAdapter(requireContext(), R.layout.showing_availability, Utils.availabilityList)  //making adapter for showing availability
-
-        binding.apply {
-            availabilityAct.setAdapter(adapterAvailability)
-            tvWordCounter.text = "${initialText.length}/250"  // setting initial characters
-        }
-
-        //counting the characters realtime
-        binding.etStatus.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val charCount = s?.length ?:0
-                binding.tvWordCounter.text = "$charCount/250"
-            }
-            override fun afterTextChanged(s: Editable?) {}
-        })
-
-        // counting the seek bar value realtime
-        binding.distanceSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                binding.distanceCount.text = progress.toString()
-            }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-        })
-
-        managingSelectionOfPurpose()//adding background while clicking on selection purpose
-
-        binding.btnSaveAndExplore.setOnClickListener {
-            Toast.makeText(requireContext(), "Not Implemented", Toast.LENGTH_SHORT).show()
-        }
+//        val initialText = binding.etStatus.text.toString()       //getting initial test for the counting for characters
+//        val adapterAvailability = ArrayAdapter(requireContext(), R.layout.showing_availability, Utils.availabilityList)  //making adapter for showing availability
+//
+//        binding.apply {
+//            availabilityAct.setAdapter(adapterAvailability)
+//            tvWordCounter.text = "${initialText.length}/250"  // setting initial characters
+//        }
+//
+//        //counting the characters realtime
+//        binding.etStatus.addTextChangedListener(object : TextWatcher{
+//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+//                val charCount = s?.length ?:0
+//                binding.tvWordCounter.text = "$charCount/250"
+//            }
+//            override fun afterTextChanged(s: Editable?) {}
+//        })
+//
+//        // counting the seek bar value realtime
+//        binding.distanceSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+//            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+//                binding.distanceCount.text = progress.toString()
+//            }
+//            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+//            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+//        })
+//
+//        managingSelectionOfPurpose()//adding background while clicking on selection purpose
+//
+//        binding.btnSaveAndExplore.setOnClickListener {
+//            Toast.makeText(requireContext(), "Not Implemented", Toast.LENGTH_SHORT).show()
+//        }
         return binding.root
+
     }
 
     private fun managingSelectionOfPurpose() {

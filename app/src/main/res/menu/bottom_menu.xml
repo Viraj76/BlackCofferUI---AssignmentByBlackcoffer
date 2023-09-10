@@ -3,13 +3,13 @@
 
     <item
         android:id="@+id/exploreFragment"
-        android:title="@string/explore"
-        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"
         />
     <item
         android:id="@+id/refineFragment"
-        android:title="@string/refine"
-        android:icon="@drawable/refine_icon"
+        android:title="History"
+        android:icon="@drawable/baseline_history_24"
         />
 
 </menu>

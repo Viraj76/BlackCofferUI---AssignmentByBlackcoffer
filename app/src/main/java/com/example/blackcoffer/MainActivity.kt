@@ -26,13 +26,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize fragments
-        personFragment = PersonFragment()
-        businessFragment = BusinessFragment()
-        merchantFragment = MerchantFragment()
-        refineFragment = RefineFragment()
+        // Initialize
+        initialization()
 
-        // Hide all fragments initially
+//        hideAllFragmentsInitially()
+
+        setupTabLayoutWithViewPager()
+
+        setupBottomNavigation()
+    }
+
+    private fun hideAllFragmentsInitially() {
         supportFragmentManager.beginTransaction()
             .add(R.id.frameLayout, personFragment)
             .hide(personFragment)
@@ -43,15 +47,6 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.frameLayout, refineFragment)
             .hide(refineFragment)
             .commitNow()
-
-        // Initialize other components
-        initialization()
-
-        // Set up bottom navigation
-        setupBottomNavigation()
-
-        // Set up TabLayout with ViewPager
-        setupTabLayoutWithViewPager()
     }
 
     private fun setupBottomNavigation() {
@@ -79,42 +74,45 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             // Set tab text based on position
             tab.text = when (position) {
-                0 -> "Personal"
-                1 -> "Business"
-                2 -> "Merchant"
+                0 -> "Cricket"
+                1 -> "Football"
+                2 -> "Hockey"
                 else -> ""
             }
         }.attach()
     }
 
     private fun initialization() {
-        // Initialize ViewPager adapter
+        personFragment = PersonFragment()
+        businessFragment = BusinessFragment()
+        merchantFragment = MerchantFragment()
+        refineFragment = RefineFragment()
+
         viewPagerAdapter = ViewPagerAdapter(this)
         binding.viewPager.adapter = viewPagerAdapter
-        binding.viewPager.offscreenPageLimit = 3
+        binding.viewPager.offscreenPageLimit = 2
+//        binding.viewPager.setPageTransformer(ZoomOutPageTransformer())
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.frameLayout, refineFragment)
+            .commitNow()
     }
 
     private fun showTabLayout() {
-        // Show the TabLayout
         binding.tabLayout.visibility = View.VISIBLE
     }
 
     private fun hideTabLayout() {
-        // Hide the TabLayout
         binding.tabLayout.visibility = View.GONE
     }
 
     private fun showFragment(fragment: Fragment) {
-        // Hide all fragments and show the specified fragment
         supportFragmentManager.beginTransaction()
             .hide(personFragment)
             .hide(businessFragment)
             .hide(merchantFragment)
-            .hide(refineFragment)
             .show(fragment)
             .commitNow()
-
-        // Adjust visibility of frameLayout and viewPager
         binding.frameLayout.visibility = if (fragment == refineFragment) View.VISIBLE else View.GONE
         binding.viewPager.visibility = if (fragment == refineFragment) View.GONE else View.VISIBLE
     }

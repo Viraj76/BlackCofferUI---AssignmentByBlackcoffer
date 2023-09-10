@@ -27,13 +27,13 @@ class PersonFragment : Fragment() {
     ): View {
         binding = FragmentPersonBinding.inflate(layoutInflater)
 
-        personList = arrayListOf() // initializing the arrayList
-
-        prepareRvForPersonAdapter()
-
-        makingCustomData()
-
-        personAdapter.setPersonList(personList) // providing data to the recycler view
+//        personList = arrayListOf() // initializing the arrayList
+//
+//        prepareRvForPersonAdapter()
+//
+//        makingCustomData()
+//
+//        personAdapter.setPersonList(personList) // providing data to the recycler view
         return binding.root
     }
 
